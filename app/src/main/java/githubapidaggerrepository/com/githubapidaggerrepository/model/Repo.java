@@ -1,5 +1,4 @@
-
-package com.example;
+package githubapidaggerrepository.com.githubapidaggerrepository.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -223,7 +222,7 @@ public class Repo implements Parcelable
     @SerializedName("default_branch")
     @Expose
     private String defaultBranch;
-    public final static Parcelable.Creator<Repo> CREATOR = new Creator<Repo>() {
+    public final static Creator<Repo> CREATOR = new Creator<Repo>() {
 
 
         @SuppressWarnings({

@@ -1,7 +1,9 @@
-package githubapidaggerrepository.com.githubapidaggerrepository;
+package githubapidaggerrepository.com.githubapidaggerrepository.home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import githubapidaggerrepository.com.githubapidaggerrepository.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,5 +1,4 @@
-
-package com.example;
+package githubapidaggerrepository.com.githubapidaggerrepository.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -22,7 +21,7 @@ public class License implements Parcelable
     @SerializedName("url")
     @Expose
     private String url;
-    public final static Parcelable.Creator<License> CREATOR = new Creator<License>() {
+    public final static Creator<License> CREATOR = new Creator<License>() {
 
 
         @SuppressWarnings({

@@ -1,5 +1,4 @@
-
-package com.example;
+package githubapidaggerrepository.com.githubapidaggerrepository.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -61,7 +60,7 @@ public class Owner implements Parcelable
     @SerializedName("site_admin")
     @Expose
     private Boolean siteAdmin;
-    public final static Parcelable.Creator<Owner> CREATOR = new Creator<Owner>() {
+    public final static Creator<Owner> CREATOR = new Creator<Owner>() {
 
 
         @SuppressWarnings({
