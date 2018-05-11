@@ -1,10 +1,9 @@
-package githubapidaggerrepository.com.githubapidaggerrepository.Api;
+package githubapidaggerrepository.com.githubapidaggerrepository.data.remote;
 
 import java.util.List;
 
-import githubapidaggerrepository.com.githubapidaggerrepository.model.Repo;
+import githubapidaggerrepository.com.githubapidaggerrepository.model.Comment;
 import io.reactivex.Observable;
-import io.reactivex.internal.operators.completable.CompletableMergeIterable;
 import retrofit2.http.GET;
 
 /**
@@ -17,6 +16,6 @@ public interface ApiInterface {
 
      // https://api.github.com/repos/google/dagger
     @GET("/repos/google/dagger/commits")
-    Observable<List<Repo>> getListRepos();
+    Observable<List<Comment>> getListRepos();
 
 }
