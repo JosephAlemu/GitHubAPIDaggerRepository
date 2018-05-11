@@ -8,18 +8,17 @@ import githubapidaggerrepository.com.githubapidaggerrepository.model.Repo;
  */
 public interface MainContract {
 
-
     interface View {
-
+         ////
         void onsuccess(List<Repo> list);
-
+        //
         void onfailure(String error);
 
     }
 
     interface Presenter {
 
-        void search(String title);
+        void fetchData();
 
     }
 
