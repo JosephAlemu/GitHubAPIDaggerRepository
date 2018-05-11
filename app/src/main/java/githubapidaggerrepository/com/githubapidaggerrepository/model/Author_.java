@@ -1,3 +1,4 @@
+
 package githubapidaggerrepository.com.githubapidaggerrepository.model;
 
 import android.os.Parcel;
@@ -6,7 +7,7 @@ import android.os.Parcelable.Creator;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Owner implements Parcelable
+public class Author_ implements Parcelable
 {
 
     @SerializedName("login")
@@ -60,24 +61,24 @@ public class Owner implements Parcelable
     @SerializedName("site_admin")
     @Expose
     private Boolean siteAdmin;
-    public final static Creator<Owner> CREATOR = new Creator<Owner>() {
+    public final static Creator<Author_> CREATOR = new Creator<Author_>() {
 
 
         @SuppressWarnings({
             "unchecked"
         })
-        public Owner createFromParcel(Parcel in) {
-            return new Owner(in);
+        public Author_ createFromParcel(Parcel in) {
+            return new Author_(in);
         }
 
-        public Owner[] newArray(int size) {
-            return (new Owner[size]);
+        public Author_[] newArray(int size) {
+            return (new Author_[size]);
         }
 
     }
     ;
 
-    protected Owner(Parcel in) {
+    protected Author_(Parcel in) {
         this.login = ((String) in.readValue((String.class.getClassLoader())));
         this.id = ((Integer) in.readValue((Integer.class.getClassLoader())));
         this.avatarUrl = ((String) in.readValue((String.class.getClassLoader())));
@@ -97,7 +98,7 @@ public class Owner implements Parcelable
         this.siteAdmin = ((Boolean) in.readValue((Boolean.class.getClassLoader())));
     }
 
-    public Owner() {
+    public Author_() {
     }
 
     public String getLogin() {
