@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -14,14 +13,14 @@ import javax.inject.Inject;
 import githubapidaggerrepository.com.githubapidaggerrepository.Api.ApiInterface;
 import githubapidaggerrepository.com.githubapidaggerrepository.R;
 import githubapidaggerrepository.com.githubapidaggerrepository.application.RepoApplication;
-import githubapidaggerrepository.com.githubapidaggerrepository.model.Repo;
+import githubapidaggerrepository.com.githubapidaggerrepository.model.Comment;
 import githubapidaggerrepository.com.githubapidaggerrepository.utils.RepoAdapter;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View{
     private RecyclerView rv;
     private RepoAdapter adapter;
 
-     private List<Repo> list;
+     private List<Comment> list;
     @Inject
     ApiInterface repoService;
 
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
-    public void onsuccess(List<Repo> list) {
+    public void onsuccess(List<Comment> list) {
 
         // set up the RecyclerView
         rv = (RecyclerView)findViewById(R.id.rvRepo);

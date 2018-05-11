@@ -1,12 +1,11 @@
 package githubapidaggerrepository.com.githubapidaggerrepository.home;
 
 import android.util.Log;
-
 import java.util.List;
 
 import githubapidaggerrepository.com.githubapidaggerrepository.Api.ApiInterface;
 import githubapidaggerrepository.com.githubapidaggerrepository.model.Commit;
-import githubapidaggerrepository.com.githubapidaggerrepository.model.Repo;
+import githubapidaggerrepository.com.githubapidaggerrepository.model.Comment;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -31,14 +30,14 @@ public  class BasePresenter implements MainContract.Presenter {
         repoService.getListRepos()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<Repo>>() {
+                .subscribe(new Observer<List<Comment>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(List<Repo> repos) {
+                    public void onNext(List<Comment> repos) {
                         view.onsuccess(repos);
                         Log.d("BasePresenter",""+repos.toString());
                     }
@@ -55,10 +54,6 @@ public  class BasePresenter implements MainContract.Presenter {
 
                     }
                 });
-
-
-
-
 
     }
 
