@@ -20,7 +20,7 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoAdapter.RepoViewHolder
 
     private List<Repo> reposList;
 
-    public RepoAdapter(List<Commit> commitList) {
+    public RepoAdapter(List<Repo> reposList) {
         this.reposList = reposList;
     }
 
