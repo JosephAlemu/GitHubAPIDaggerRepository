@@ -5,7 +5,6 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import githubapidaggerrepository.com.githubapidaggerrepository.data.remote.ApiInterface;
-import githubapidaggerrepository.com.githubapidaggerrepository.injection.component.ApiComponent;
 import githubapidaggerrepository.com.githubapidaggerrepository.view.home.HomePresenter;
 
 /**

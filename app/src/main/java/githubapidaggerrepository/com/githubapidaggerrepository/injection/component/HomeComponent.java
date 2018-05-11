@@ -13,7 +13,7 @@ import githubapidaggerrepository.com.githubapidaggerrepository.view.home.HomeAct
 
 @Singleton
 @Component(modules = {NetworkModule.class, HomeModule.class})
-public interface ApiComponent {
+public interface HomeComponent {
 
     void inject(HomeActivity target);
 

@@ -3,8 +3,8 @@ package githubapidaggerrepository.com.githubapidaggerrepository.application;
 import android.app.Application;
 
 
-import githubapidaggerrepository.com.githubapidaggerrepository.injection.component.ApiComponent;
-import githubapidaggerrepository.com.githubapidaggerrepository.injection.component.DaggerApiComponent;
+import githubapidaggerrepository.com.githubapidaggerrepository.injection.component.DaggerHomeComponent;
+import githubapidaggerrepository.com.githubapidaggerrepository.injection.component.HomeComponent;
 import githubapidaggerrepository.com.githubapidaggerrepository.injection.module.NetworkModule;
 import githubapidaggerrepository.com.githubapidaggerrepository.utils.Constant;
 
@@ -12,10 +12,10 @@ import githubapidaggerrepository.com.githubapidaggerrepository.utils.Constant;
  * Created by user on 5/10/2018.
  */
 
-public class RepoApplication extends Application {
+public class CommitApplication extends Application {
 
     ///
-    private ApiComponent mApiComponent;
+    private HomeComponent mHomeComponent;
 
     @Override
     public void onCreate() {
@@ -27,13 +27,13 @@ public class RepoApplication extends Application {
     private void resolveDependency() {
 
 
-        mApiComponent =  DaggerApiComponent.builder()
+        mHomeComponent =  DaggerHomeComponent.builder()
                 .networkModule(new NetworkModule(Constant.BASE_URL))
                 .build();
     }
 
-    public ApiComponent getApiComponent() {
-        return mApiComponent;
+    public HomeComponent getApiComponent() {
+        return mHomeComponent;
     }
 
 }

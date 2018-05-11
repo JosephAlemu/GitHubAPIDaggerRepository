@@ -10,7 +10,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import githubapidaggerrepository.com.githubapidaggerrepository.R;
-import githubapidaggerrepository.com.githubapidaggerrepository.application.RepoApplication;
+import githubapidaggerrepository.com.githubapidaggerrepository.application.CommitApplication;
 import githubapidaggerrepository.com.githubapidaggerrepository.data.remote.ApiInterface;
 import githubapidaggerrepository.com.githubapidaggerrepository.model.Comment;
 import githubapidaggerrepository.com.githubapidaggerrepository.utils.ViewUtils;
@@ -33,9 +33,9 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
         setupDaggerComponent();
 
     }
-    
+
     private void setupDaggerComponent() {
-        ((RepoApplication) getApplication()).getApiComponent().inject(this);
+        ((CommitApplication) getApplication()).getApiComponent().inject(this);
     }
 
     @Override

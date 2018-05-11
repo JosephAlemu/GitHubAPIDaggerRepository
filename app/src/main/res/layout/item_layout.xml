@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
+    android:padding="5dp"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/card_view"
@@ -8,18 +9,27 @@
     card_view:cardCornerRadius="4dp"
     android:layout_margin="5dp">
 
-    <RelativeLayout
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txtAuthor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Commit"
-            android:gravity="center_horizontal"
+            android:gravity="left"
             android:textStyle="bold"
-            android:textSize="16sp"/>
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/txtCommitLabel"
+            android:textStyle="bold"
+            android:text="Commit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
         <TextView
@@ -29,21 +39,25 @@
             android:text="Commit Hash"
             android:gravity="center_vertical"
             android:textSize="12dp"
-            android:layout_below="@id/txtAuthor"
             android:layout_marginLeft="5dp"
             />
 
+        <TextView
+            android:id="@+id/txtCommitMsgLabel"
+            android:textStyle="bold"
+            android:text="Commit message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/txtCommitMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Commit Message"
             android:textSize="12dp"
-            android:layout_below="@id/txtCommitHash"
             android:layout_marginLeft="5dp" />
 
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </android.support.v7.widget.CardView>
