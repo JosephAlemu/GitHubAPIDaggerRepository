@@ -4,11 +4,11 @@ package githubapidaggerrepository.com.githubapidaggerrepository.model;
 import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Repo implements Parcelable
+public class Comment implements Parcelable
 {
 
     @SerializedName("sha")
@@ -35,24 +35,24 @@ public class Repo implements Parcelable
     @SerializedName("parents")
     @Expose
     private List<Parent> parents = null;
-    public final static Creator<Repo> CREATOR = new Creator<Repo>() {
+    public final static Creator<Comment> CREATOR = new Creator<Comment>() {
 
 
         @SuppressWarnings({
             "unchecked"
         })
-        public Repo createFromParcel(Parcel in) {
-            return new Repo(in);
+        public Comment createFromParcel(Parcel in) {
+            return new Comment(in);
         }
 
-        public Repo[] newArray(int size) {
-            return (new Repo[size]);
+        public Comment[] newArray(int size) {
+            return (new Comment[size]);
         }
 
     }
     ;
 
-    protected Repo(Parcel in) {
+    protected Comment(Parcel in) {
         this.sha = ((String) in.readValue((String.class.getClassLoader())));
         this.commit = ((Commit) in.readValue((Commit.class.getClassLoader())));
         this.url = ((String) in.readValue((String.class.getClassLoader())));
@@ -60,10 +60,10 @@ public class Repo implements Parcelable
         this.commentsUrl = ((String) in.readValue((String.class.getClassLoader())));
         this.author = ((Author_) in.readValue((Author_.class.getClassLoader())));
         this.committer = ((Committer_) in.readValue((Committer_.class.getClassLoader())));
-        in.readList(this.parents, (Repo.class.getClassLoader()));
+        in.readList(this.parents, (Comment.class.getClassLoader()));
     }
 
-    public Repo() {
+    public Comment() {
     }
 
     public String getSha() {

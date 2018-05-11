@@ -13,23 +13,14 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:text="Commit"
-            android:gravity="center_vertical"
-            android:textSize="16dp"/>
-
-        <TextView
             android:id="@+id/txtAuthor"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Author Name"
-            android:gravity="center_vertical"
-            android:textSize="12dp"
-            android:layout_below="@id/title"
-            android:layout_marginTop="9dp"
-            android:layout_marginLeft="5dp"/>
+            android:text="Commit"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
 
         <TextView
             android:id="@+id/txtCommitHash"
@@ -39,7 +30,6 @@
             android:gravity="center_vertical"
             android:textSize="12dp"
             android:layout_below="@id/txtAuthor"
-            android:layout_marginTop="9dp"
             android:layout_marginLeft="5dp"
             />
 
@@ -49,10 +39,8 @@
             android:layout_height="wrap_content"
             android:text="Commit Message"
             android:textSize="12dp"
-            android:layout_marginTop="9dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="150dp"
-            android:layout_alignBaseline="@id/txtAuthor"/>
+            android:layout_below="@id/txtCommitHash"
+            android:layout_marginLeft="5dp" />
 
 
 

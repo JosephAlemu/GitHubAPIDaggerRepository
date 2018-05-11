@@ -1,10 +1,10 @@
-package githubapidaggerrepository.com.githubapidaggerrepository.home;
+package githubapidaggerrepository.com.githubapidaggerrepository.view.home;
 
-import android.util.Log;
 import java.util.List;
 
-import githubapidaggerrepository.com.githubapidaggerrepository.Api.ApiInterface;
-import githubapidaggerrepository.com.githubapidaggerrepository.model.Commit;
+import javax.inject.Inject;
+
+import githubapidaggerrepository.com.githubapidaggerrepository.data.remote.ApiInterface;
 import githubapidaggerrepository.com.githubapidaggerrepository.model.Comment;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -14,20 +14,21 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Created by user on 5/10/2018.
  */
-public  class BasePresenter implements MainContract.Presenter {
+public  class HomePresenter implements HomeContract.Presenter {
 
-    List<Commit> list;
-    ApiInterface repoService;
-    MainContract.View view;
-    public BasePresenter(MainContract.View view,ApiInterface repoService) {
-        this.view = view;
-        this.repoService = repoService;
+
+    ApiInterface commentService;
+    HomeContract.View view;
+
+    @Inject
+    public HomePresenter(ApiInterface commentService) {
+        this.commentService = commentService;
     }
 
     @Override
     public void fetchData(){
 
-        repoService.getListRepos()
+        commentService.getListRepos()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<List<Comment>>() {
@@ -37,16 +38,14 @@ public  class BasePresenter implements MainContract.Presenter {
                     }
 
                     @Override
-                    public void onNext(List<Comment> repos) {
-                        view.onsuccess(repos);
-                        Log.d("BasePresenter",""+repos.toString());
+                    public void onNext(List<Comment> comments) {
+                        view.onCommentsReceived(comments);
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         e.printStackTrace();
-                        view.onfailure("error");
-                        Log.d("BasePresenter",""+e.toString());
+                        view.showError(e.toString());
                     }
 
                     @Override
@@ -55,8 +54,19 @@ public  class BasePresenter implements MainContract.Presenter {
                     }
                 });
 
+
+
     }
 
 
+    @Override
+    public void attachView(HomeContract.View view) {
+        this.view = view;
+    }
 
+    @Override
+    public void detachView() {
+
+        this.view = null;
+    }
 }

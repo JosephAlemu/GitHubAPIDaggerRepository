@@ -8,10 +8,10 @@
     android:paddingRight="@dimen/horizontal_margin"
     android:paddingTop="@dimen/vertical_margin"
     android:paddingBottom="@dimen/vertical_margin"
-    tools:context="githubapidaggerrepository.com.githubapidaggerrepository.home.MainActivity">
+    tools:context=".view.home.HomeActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvRepo"
+        android:id="@+id/rvComments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

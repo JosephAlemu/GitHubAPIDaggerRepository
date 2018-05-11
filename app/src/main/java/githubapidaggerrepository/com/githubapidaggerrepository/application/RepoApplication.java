@@ -2,9 +2,10 @@ package githubapidaggerrepository.com.githubapidaggerrepository.application;
 
 import android.app.Application;
 
-import githubapidaggerrepository.com.githubapidaggerrepository.dependecies.ApiComponent;
-import githubapidaggerrepository.com.githubapidaggerrepository.dependecies.DaggerApiComponent;
-import githubapidaggerrepository.com.githubapidaggerrepository.dependecies.NetworkModule;
+
+import githubapidaggerrepository.com.githubapidaggerrepository.injection.component.ApiComponent;
+import githubapidaggerrepository.com.githubapidaggerrepository.injection.component.DaggerApiComponent;
+import githubapidaggerrepository.com.githubapidaggerrepository.injection.module.NetworkModule;
 import githubapidaggerrepository.com.githubapidaggerrepository.utils.Constant;
 
 /**
